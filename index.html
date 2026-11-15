@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MarinAuto – приложение за Android Auto от Марин Узунов</title>
+<meta name="description" content="MarinAuto – браузър, видео, съобщения с четене на глас и карта със сигнали от Waze на дисплея на колата. Създадено от Марин Узунов.">
+<style>
+  :root{--bg:#0b1020;--card:#151b30;--line:#26304f;--tx:#e9edf7;--mut:#9aa5c4;--ac:#3d8bff;--ac2:#22d3ee}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#1b2a5a 0,transparent 60%),var(--bg);color:var(--tx);line-height:1.55}
+  .w{max-width:760px;margin:0 auto;padding:28px 20px 48px}
+  h1{font-size:44px;margin:24px 0 4px;letter-spacing:-.5px;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .by{color:var(--mut);margin:0 0 18px;font-size:17px}
+  .lead{font-size:19px;margin:0 0 24px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+  .b{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px}
+  .b1{background:var(--ac);color:#fff}
+  .b2{border:1px solid var(--line);color:var(--tx)}
+  h2{font-size:22px;margin:34px 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .c>b{display:block;margin-bottom:4px}
+  .c span{color:var(--mut);font-size:15px}
+  .price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .price .n{font-size:40px;font-weight:700;color:#fff}
+  .price .m{color:var(--mut)}
+  ol{padding-left:22px;margin:8px 0}
+  ol li{margin:6px 0}
+  .note{color:var(--mut);font-size:14px}
+  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<div class="w">
+  <h1>MarinAuto</h1>
+  <p class="by">Създадено от Марин Узунов</p>
+  <p class="lead">Приложение за Android Auto: браузър и видео, съобщения с четене на глас и карта със сигнали от Waze – направо на дисплея на колата.</p>
+  <div class="btns">
+    <a class="b b1" href="MarinAuto.apk" download>Изтегли MarinAuto 3.1</a>
+    <a class="b b2" href="#buy">Как се купува</a>
+  </div>
+
+  <h2>Какво може</h2>
+  <div class="grid">
+    <div class="c"><b>Браузър в колата</b><span>Отваря сайтове на дисплея на Android Auto, с плочки за любимите ти сайтове.</span></div>
+    <div class="c"><b>Видео в движение</b><span>Телевизия и видео за пътниците, включително на разделен екран с карта.</span></div>
+    <div class="c"><b>Съобщения на глас</b><span>Чатове като във Viber, четене на глас на български и отговор с диктовка.</span></div>
+    <div class="c"><b>Карта със сигнали</b><span>Карта с текущото място и сигнали от Waze, които приложението казва на глас.</span></div>
+  </div>
+
+  <h2 id="buy">Цена</h2>
+  <div class="c">
+    <div class="price"><span class="n">25 €</span><span class="m">еднократно, пожизнен лиценз за едно устройство</span></div>
+    <p style="margin:8px 0 0">Първите <b>3 дни</b> са безплатни, с пълна функционалност.</p>
+  </div>
+
+  <h2>Как се отключва</h2>
+  <ol>
+    <li>Изтегли и инсталирай приложението, пробвай го 3 дни.</li>
+    <li>Натисни „Отключи“ в приложението. Там е твоят ID на устройството.</li>
+    <li>Плати 25 € от бутона в приложението и изпрати своя ID.</li>
+    <li>След като плащането пристигне, получаваш код за отключване (MarinAuto-…). Въвеждаш го и приложението е отключено завинаги.</li>
+  </ol>
+
+  <h2>Инсталиране</h2>
+  <ol>
+    <li>Изтегли файла на телефона и го отвори.</li>
+    <li>Ако телефонът попита, разреши инсталиране от този източник.</li>
+    <li>Свържи телефона с Android Auto. В настройките на Android Auto включи „Непознати източници“ (режим за разработчици), за да се покаже приложението в колата.</li>
+  </ol>
+  <p class="note">Изисква Android 15 или по-нов и Android Auto. Приложението не е в Google Play.</p>
+
+  <footer>MarinAuto · © 2026 Марин Узунов · Продава се от Марин Узунов като физическо лице.</footer>
+</div>
+</body>
+</html>
