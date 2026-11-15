@@ -80,12 +80,16 @@
 
   <h2 id="contact">Връзка</h2>
   <p>След плащането изпрати своето ID оттук и ще получиш кода за отключване. Пиши и ако имаш въпрос или проблем.</p>
-  <form class="f" id="cf">
+  <form class="f" id="cf" action="https://formsubmit.co/marin_uzunov@gmx.com" method="POST">
     <input name="Име" placeholder="Име" required>
     <input name="email" type="email" placeholder="Имейл за отговор" required>
     <input name="ID на устройството" id="dev" placeholder="ID на устройството (MarinAuto → Отключи)">
     <textarea name="Съобщение" placeholder="Съобщение" required></textarea>
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="_subject" value="MarinAuto – ново съобщение">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://marinauto.pro/?sent=1#contact">
+    <p class="note">🛡 Защита от спам: след „Изпрати“ ще се появи кратка проверка „Не съм робот“ (reCAPTCHA), после се връщаш тук.</p>
     <button class="b b1" type="submit" id="sb">Изпрати</button>
     <div id="st"></div>
   </form>
@@ -94,18 +98,9 @@
 </div>
 <script>
 (function(){
-  var q=new URLSearchParams(location.search),id=q.get('id');
+  var q=new URLSearchParams(location.search),id=q.get('id'),st=document.getElementById('st');
   if(id){document.getElementById('dev').value=id;document.querySelector('textarea').value='Платих 25 € за MarinAuto. Моля за код за отключване.';}
-  var f=document.getElementById('cf'),st=document.getElementById('st'),sb=document.getElementById('sb');
-  f.addEventListener('submit',function(e){
-    e.preventDefault();sb.disabled=true;st.className='';st.textContent='Изпращам…';
-    var d=new FormData(f);d.append('_subject','MarinAuto – съобщение от '+(d.get('Име')||'клиент'));d.append('_template','table');
-    fetch('https://formsubmit.co/ajax/marin_uzunov@gmx.com',{method:'POST',headers:{'Accept':'application/json'},body:d})
-      .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||j.success==='false'||j.success===false)throw 0;})})
-      .then(function(){st.className='ok';st.textContent='Изпратено! Ще ти отговоря на посочения имейл.';f.reset();if(id)document.getElementById('dev').value=id;})
-      .catch(function(){st.className='err';st.textContent='Не успях да изпратя. Опитай пак след малко.';})
-      .finally(function(){sb.disabled=false;});
-  });
+  if(q.get('sent')){st.className='ok';st.textContent='Изпратено! Ще ти отговоря на посочения имейл.';}
 })();
 </script>
 </body>
