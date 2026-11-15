@@ -28,6 +28,12 @@
   ol{padding-left:22px;margin:8px 0}
   ol li{margin:6px 0}
   .note{color:var(--mut);font-size:14px}
+  .f{display:flex;flex-direction:column;gap:10px}
+  .f input,.f textarea{font:inherit;font-size:16px;color:var(--tx);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;outline:none}
+  .f input:focus,.f textarea:focus{border-color:var(--ac)}
+  .f textarea{min-height:110px;resize:vertical}
+  .f button{align-self:flex-start;border:none;cursor:pointer;font:inherit}
+  .ok{color:#3ddc84}.err{color:#ff8a80}
   footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
 </style>
 </head>
@@ -39,6 +45,7 @@
   <div class="btns">
     <a class="b b1" href="MarinAuto.apk" download>Изтегли MarinAuto 3.4</a>
     <a class="b b2" href="#buy">Как се купува</a>
+    <a class="b b2" href="#contact">Връзка</a>
   </div>
 
   <h2>Какво може</h2>
@@ -59,7 +66,7 @@
   <ol>
     <li>Изтегли и инсталирай приложението, пробвай го 3 дни.</li>
     <li>Натисни „Отключи“ в приложението. Там е твоят ID на устройството.</li>
-    <li>Плати 25 € от бутона в приложението и изпрати своя ID.</li>
+    <li>Плати 25 € от бутона в приложението и изпрати своето ID чрез формата за връзка отдолу.</li>
     <li>След като плащането пристигне, получаваш код за отключване (MarinAuto-…). Въвеждаш го и получаваш пълната версия.</li>
   </ol>
 
@@ -71,7 +78,35 @@
   </ol>
   <p class="note">Изисква Android 15 или по-нов и Android Auto. Приложението не е в Google Play.</p>
 
+  <h2 id="contact">Връзка</h2>
+  <p>След плащането изпрати своето ID оттук и ще получиш кода за отключване. Пиши и ако имаш въпрос или проблем.</p>
+  <form class="f" id="cf">
+    <input name="Име" placeholder="Име" required>
+    <input name="email" type="email" placeholder="Имейл за отговор" required>
+    <input name="ID на устройството" id="dev" placeholder="ID на устройството (MarinAuto → Отключи)">
+    <textarea name="Съобщение" placeholder="Съобщение" required></textarea>
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <button class="b b1" type="submit" id="sb">Изпрати</button>
+    <div id="st"></div>
+  </form>
+
   <footer>MarinAuto · © 2026 Марин Узунов · Продава се от Марин Узунов като физическо лице.</footer>
 </div>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search),id=q.get('id');
+  if(id){document.getElementById('dev').value=id;document.querySelector('textarea').value='Платих 25 € за MarinAuto. Моля за код за отключване.';}
+  var f=document.getElementById('cf'),st=document.getElementById('st'),sb=document.getElementById('sb');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();sb.disabled=true;st.className='';st.textContent='Изпращам…';
+    var d=new FormData(f);d.append('_subject','MarinAuto – съобщение от '+(d.get('Име')||'клиент'));d.append('_template','table');
+    fetch('https://formsubmit.co/ajax/marin_uzunov@gmx.com',{method:'POST',headers:{'Accept':'application/json'},body:d})
+      .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||j.success==='false'||j.success===false)throw 0;})})
+      .then(function(){st.className='ok';st.textContent='Изпратено! Ще ти отговоря на посочения имейл.';f.reset();if(id)document.getElementById('dev').value=id;})
+      .catch(function(){st.className='err';st.textContent='Не успях да изпратя. Опитай пак след малко.';})
+      .finally(function(){sb.disabled=false;});
+  });
+})();
+</script>
 </body>
 </html>
