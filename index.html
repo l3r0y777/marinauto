@@ -33,6 +33,7 @@
   .f input:focus,.f textarea:focus{border-color:var(--ac)}
   .f textarea{min-height:110px;resize:vertical}
   .f button{align-self:flex-start;border:none;cursor:pointer;font:inherit}
+  .lnk{color:#9cc0ff}
   .ok{color:#3ddc84}.err{color:#ff8a80}
   footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
 </style>
@@ -64,18 +65,44 @@
 
   <h2>Как се отключва</h2>
   <ol>
-    <li>Изтегли и инсталирай приложението, пробвай го 3 дни.</li>
+    <li>Инсталирай приложението (виж „Инсталиране“ по-долу) и го пробвай 3 дни.</li>
     <li>Натисни „Отключи“ в приложението. Там е твоят ID на устройството.</li>
     <li>Плати 25 € от бутона в приложението и изпрати своето ID чрез формата за връзка отдолу.</li>
     <li>След като плащането пристигне, получаваш код за отключване (MarinAuto-…). Въвеждаш го и получаваш пълната версия.</li>
   </ol>
 
-  <h2>Инсталиране</h2>
-  <ol>
-    <li>Изтегли файла на телефона и го отвори.</li>
-    <li>Ако телефонът попита, разреши инсталиране от този източник.</li>
-    <li>Свържи телефона с Android Auto. В настройките на Android Auto включи „Непознати източници“ (режим за разработчици), за да се покаже приложението в колата.</li>
-  </ol>
+  <h2 id="install">Инсталиране</h2>
+  <p>Android Auto показва само приложения, инсталирани „от Google Play“. Затова MarinAuto се слага през безплатния инсталатор <b>UnknownAuto</b> с помощта на <b>Shizuku</b>. Настройва се веднъж, за около 5 минути.</p>
+  <div class="c" style="margin-bottom:12px"><b>1. Изтегли</b>
+    <ol>
+      <li><a class="lnk" href="MarinAuto.apk" download>MarinAuto.apk</a> – отгоре на страницата.</li>
+      <li><a class="lnk" href="https://github.com/GitMag/UnknownAuto/releases/latest">UnknownAuto</a> – файла UnknownAuto-….apk. Отвори го и го инсталирай (разреши инсталиране от този източник, ако пита).</li>
+    </ol></div>
+  <div class="c" style="margin-bottom:12px"><b>2. Пусни Shizuku (само веднъж)</b>
+    <ol>
+      <li>Телефонът трябва да е на Wi-Fi.</li>
+      <li>В UnknownAuto натисни <b>Install Shizuku</b> (или го вземи от Google Play).</li>
+      <li>Включи режима за разработчици: Настройки → Относно телефона → натисни 7 пъти <b>Номер на компилацията</b>. На Xiaomi – натисни 7 пъти <b>Версия на ОС</b>.</li>
+      <li>В Shizuku, при „Start via Wireless debugging“, натисни <b>Pairing</b> и разреши известията.</li>
+      <li>Отвори Настройки → Допълнителни настройки → Опции за програмисти → <b>Безжично отстраняване на грешки</b>, включи го и натисни <b>Сдвояване с код</b>. Остави прозореца отворен.</li>
+      <li>В известието на Shizuku натисни <b>Enter pairing code</b>, въведи 6-те цифри и изпрати.</li>
+      <li>В Shizuku натисни <b>Start</b>. Готово е, когато пише, че работи.</li>
+    </ol>
+    <p class="note">На Xiaomi, ако сдвояването засече: Настройки → Приложения → Shizuku → Батерия → Без ограничения.</p></div>
+  <div class="c" style="margin-bottom:12px"><b>3. Инсталирай MarinAuto</b>
+    <ol>
+      <li>В UnknownAuto натисни <b>Load APK…</b> и избери MarinAuto.apk.</li>
+      <li>Натисни <b>Install</b> и потвърди. Трябва да излезе зелено ✔.</li>
+      <li>Ако Play Protect предложи проверка: <b>Още подробности</b> → <b>Инсталиране без сканиране</b>.</li>
+    </ol></div>
+  <div class="c" style="margin-bottom:12px"><b>4. Android Auto</b>
+    <ol>
+      <li>Android Auto → Настройки → натисни 10 пъти <b>Версия</b> → режим за разработчици.</li>
+      <li>⋮ → Настройки за програмисти → включи <b>Непознати източници</b>.</li>
+      <li>Свържи телефона с колата – MarinAuto е в списъка с приложения.</li>
+    </ol></div>
+  <div class="c" style="margin-bottom:12px"><b>⚠ Нова версия</b>
+    <p style="margin:6px 0 0">Всяка нова версия на MarinAuto инсталирай <b>пак през UnknownAuto</b>, не направо от файла – иначе приложението може да изчезне от колата. След рестарт на телефона: включи пак Безжичното отстраняване на грешки и натисни <b>Start</b> в Shizuku (без ново сдвояване).</p></div>
   <p class="note">Изисква Android 15 или по-нов и Android Auto. Приложението не е в Google Play.</p>
 
   <h2 id="contact">Връзка</h2>
