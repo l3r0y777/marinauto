@@ -35,6 +35,13 @@
   .f button{align-self:flex-start;border:none;cursor:pointer;font:inherit}
   .lnk{color:#9cc0ff}
   .ok{color:#3ddc84}.err{color:#ff8a80}
+  .promo{position:relative;overflow:hidden;border:1px solid #6b5cff;background:linear-gradient(135deg,#1a1f45,#151b30 60%);box-shadow:0 0 40px rgba(107,92,255,.25)}
+  .c .tag{display:inline-block;padding:5px 12px;border-radius:999px;border:1px solid #ffc440;color:#ffc440;font-size:13px;font-weight:700;letter-spacing:1.5px;margin-bottom:10px}
+  .price .old{font-size:30px;color:#8a93b3;text-decoration:line-through;text-decoration-color:#ff5a64;text-decoration-thickness:3px}
+  .price .new{font-size:54px;font-weight:800;background:linear-gradient(90deg,#78dcff,#7a5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .b3{background:linear-gradient(90deg,#78dcff,#967aff);color:#0b1020;margin-top:14px}
+  .strip{display:block;text-decoration:none;color:var(--tx);border:1px solid #6b5cff;border-radius:14px;padding:12px 16px;margin:0 0 26px;background:linear-gradient(90deg,rgba(120,220,255,.12),rgba(122,92,255,.18))}
+  .strip b{color:#ffc440}
   footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
 </style>
 </head>
@@ -43,6 +50,7 @@
   <h1>MarinAuto</h1>
   <p class="by">Създадено от Марин Узунов</p>
   <p class="lead">Приложение за Android Auto: браузър и видео, съобщения с четене на глас и карта със сигнали от Waze – направо на дисплея на колата.</p>
+  <a class="strip" href="#buy"><b>ПРОМО до 26 февруари 2027:</b> пълната версия за <b>25 €</b> вместо <s>99 €</s> →</a>
   <div class="btns">
     <a class="b b1" href="MarinAuto-5.0.apk" download="MarinAuto-5.0.apk">Изтегли MarinAuto 5.0</a>
     <a class="b b2" href="#buy">Как се купува</a>
@@ -58,9 +66,11 @@
   </div>
 
   <h2 id="buy">Цена</h2>
-  <div class="c">
-    <div class="price"><span class="n">25 €</span><span class="m">еднократно, лиценз за пълна версия на едно устройство</span></div>
-    <p style="margin:8px 0 0">Първите <b>3 дни</b> са безплатни, с пълна функционалност.</p>
+  <div class="c promo">
+    <span class="tag">ПРОМО · ДО 26 ФЕВРУАРИ 2027</span>
+    <div class="price"><span class="old">99 €</span><span class="new">25 €</span><span class="m">еднократно, лиценз за пълна версия на едно устройство</span></div>
+    <p style="margin:8px 0 0">До <b>26 февруари 2027</b> само <b>25 €</b> отключва пълната версия! Първите <b>3 дни</b> са безплатни, с пълна функционалност.</p>
+    <a class="b b3" href="MarinAuto-5.0.apk" download="MarinAuto-5.0.apk">Вземи сега →</a>
   </div>
 
   <h2>Как се отключва</h2>
