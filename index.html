@@ -72,16 +72,20 @@
   </ol>
 
   <h2 id="install">Инсталиране</h2>
-  <p>Android Auto показва само приложения, инсталирани „от Google Play“. Затова MarinAuto се слага през безплатния инсталатор <b>UnknownAuto</b> с помощта на <b>Shizuku</b>. Настройва се веднъж, за около 5 минути.</p>
+  <p>Android Auto показва само приложения, инсталирани „от Google Play“. Затова MarinAuto се слага през инсталатор, който го отбелязва като инсталиран от Google Play, с помощта на <b>Shizuku</b>. Избери си единия от двата безплатни инсталатора – <b>UnknownAuto</b> или <b>Universal Installer</b>. Настройва се веднъж, за около 5 минути.</p>
   <div class="c" style="margin-bottom:12px"><b>1. Изтегли</b>
     <ol>
       <li><a class="lnk" href="MarinAuto.apk" download>MarinAuto.apk</a> – отгоре на страницата.</li>
-      <li><a class="lnk" href="https://github.com/GitMag/UnknownAuto/releases/latest">UnknownAuto</a> – файла UnknownAuto-….apk. Отвори го и го инсталирай (разреши инсталиране от този източник, ако пита).</li>
+      <li>Един от инсталаторите (разреши инсталиране от този източник, ако пита):
+        <ul>
+          <li><a class="lnk" href="https://github.com/GitMag/UnknownAuto/releases/latest">UnknownAuto</a> – файла UnknownAuto-….apk. Най-прост, само за това.</li>
+          <li><a class="lnk" href="https://f-droid.org/packages/app.pwhs.universalinstaller/">Universal Installer</a> – от F-Droid. По-богат инсталатор за всякакви APK.</li>
+        </ul></li>
     </ol></div>
   <div class="c" style="margin-bottom:12px"><b>2. Пусни Shizuku (само веднъж)</b>
     <ol>
       <li>Телефонът трябва да е на Wi-Fi.</li>
-      <li>В UnknownAuto натисни <b>Install Shizuku</b> (или го вземи от Google Play).</li>
+      <li>Инсталирай <b>Shizuku</b> от Google Play (в UnknownAuto има и бутон <b>Install Shizuku</b>).</li>
       <li>Включи режима за разработчици: Настройки → Относно телефона → натисни 7 пъти <b>Номер на компилацията</b>. На Xiaomi – натисни 7 пъти <b>Версия на ОС</b>.</li>
       <li>В Shizuku, при „Start via Wireless debugging“, натисни <b>Pairing</b> и разреши известията.</li>
       <li>Отвори Настройки → Допълнителни настройки → Опции за програмисти → <b>Безжично отстраняване на грешки</b>, включи го и натисни <b>Сдвояване с код</b>. Остави прозореца отворен.</li>
@@ -89,12 +93,19 @@
       <li>В Shizuku натисни <b>Start</b>. Готово е, когато пише, че работи.</li>
     </ol>
     <p class="note">На Xiaomi, ако сдвояването засече: Настройки → Приложения → Shizuku → Батерия → Без ограничения.</p></div>
-  <div class="c" style="margin-bottom:12px"><b>3. Инсталирай MarinAuto</b>
+  <div class="c" style="margin-bottom:12px"><b>3. Инсталирай MarinAuto – с инсталатора, който избра</b>
+    <p style="margin:10px 0 2px"><b>А) UnknownAuto</b></p>
     <ol>
-      <li>В UnknownAuto натисни <b>Load APK…</b> и избери MarinAuto.apk.</li>
+      <li>Натисни <b>Load APK…</b> и избери MarinAuto.apk.</li>
       <li>Натисни <b>Install</b> и потвърди. Трябва да излезе зелено ✔.</li>
-      <li>Ако Play Protect предложи проверка: <b>Още подробности</b> → <b>Инсталиране без сканиране</b>.</li>
-    </ol></div>
+    </ol>
+    <p style="margin:10px 0 2px"><b>Б) Universal Installer</b></p>
+    <ol>
+      <li>Настройки → Инсталиране → избери <b>Shizuku</b> за начин на инсталиране и разреши достъпа, когато Shizuku попита.</li>
+      <li>Задай <b>източник на инсталиране (Install Source) – Google Play</b>. Може да го запазиш като профил, за да е винаги така.</li>
+      <li>Избери MarinAuto.apk и инсталирай.</li>
+    </ol>
+    <p class="note">И при двата: ако Play Protect предложи проверка – <b>Още подробности</b> → <b>Инсталиране без сканиране</b>. Провери после: Настройки → Приложения → MarinAuto → най-долу трябва да пише „Инсталирано от Google Play Store“.</p></div>
   <div class="c" style="margin-bottom:12px"><b>4. Android Auto</b>
     <ol>
       <li>Android Auto → Настройки → натисни 10 пъти <b>Версия</b> → режим за разработчици.</li>
@@ -102,7 +113,7 @@
       <li>Свържи телефона с колата – MarinAuto е в списъка с приложения.</li>
     </ol></div>
   <div class="c" style="margin-bottom:12px"><b>⚠ Нова версия</b>
-    <p style="margin:6px 0 0">Всяка нова версия на MarinAuto инсталирай <b>пак през UnknownAuto</b>, не направо от файла – иначе приложението може да изчезне от колата. След рестарт на телефона: включи пак Безжичното отстраняване на грешки и натисни <b>Start</b> в Shizuku (без ново сдвояване).</p></div>
+    <p style="margin:6px 0 0">Всяка нова версия на MarinAuto инсталирай <b>пак през същия инсталатор</b> (UnknownAuto или Universal Installer с източник Google Play), не направо от файла – иначе приложението може да изчезне от колата. След рестарт на телефона: включи пак Безжичното отстраняване на грешки и натисни <b>Start</b> в Shizuku (без ново сдвояване).</p></div>
   <p class="note">Изисква Android 15 или по-нов и Android Auto. Приложението не е в Google Play.</p>
 
   <h2 id="contact">Връзка</h2>
